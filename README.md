@@ -144,7 +144,7 @@ python -m de_thi_python.de_2.cau5
 
 ## 6. Auto cham diem bai nop
 
-Bo cham diem tu dong danh gia truc tiep 5 file `Cau1.py` den `Cau5.py` trong thu muc bai nop. Moi cau toi da 2 diem, tong diem la 10; ket qua hien thi theo tung tieu chi va duoc luu thanh file JSON trong thu muc `reports/`.
+Bo cham diem tu dong danh gia truc tiep 5 file `Cau1.py` den `Cau5.py` trong thu muc bai nop. Moi cau toi da 2 diem, tong diem la 10; ket qua hien thi theo tung tieu chi va duoc luu thanh file JSON trong thu muc `reports/`. Neu chua lam mot cau, ban co the de thieu file tuong ung: cau do nhan 0 diem, cac cau co file van duoc cham rieng. Vi du, thu muc co `Cau1.py` den `Cau4.py` va thieu `Cau5.py` se duoc cham toi da 8/10.
 
 Chay trong menu chinh:
 
