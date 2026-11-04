@@ -1,34 +1,34 @@
-# De thi Python — Project on tap va thuc hanh
+# Đề thi Python — Project ôn tập và thực hành
 
 [![Python tests](https://github.com/Noah-12111/de-thi-python/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Noah-12111/de-thi-python/actions/workflows/python-tests.yml)
 
-Project giai de thi ket thuc mon **Lap trinh Python (ma mon 229152, ma de 11301)**. Source duoc to chuc thanh Python package co module, CLI, kiem thu tu dong va tai lieu. Repository dong thoi giu 5 file Python doc lap theo cau truc nop bai cua de thi.
+Project giải đề thi kết thúc môn **Lập trình Python (mã môn 229152, mã đề 11301)**. Source được tổ chức thành Python package có module, CLI, kiểm thử tự động và tài liệu. Repository đồng thời giữ 5 file Python độc lập theo cấu trúc nộp bài của đề thi.
 
-## 1. Muc tieu
+## 1. Mục tiêu
 
-- Giai day du 5 cau theo de va dap an mau duoc cung cap.
-- Dung cu phap Python co ban, ten ham de hieu va chu thich ro rang.
-- Tach moi cau thanh mot module de import va tai su dung.
-- Gom cac module vao mot package.
-- Co menu CLI de chay chuong trinh.
-- Co unit test de kiem tra ham va lop.
-- Co cau hinh dong goi bang pyproject.toml va GitHub Actions.
+- Giải đầy đủ 5 câu theo đề và đáp án mẫu được cung cấp.
+- Dùng cú pháp Python cơ bản, tên hàm dễ hiểu và chú thích rõ ràng.
+- Tách mỗi câu thành một module để import và tái sử dụng.
+- Gom các module vào một package.
+- Có menu CLI để chạy chương trình.
+- Có unit test để kiểm tra hàm và lớp.
+- Có cấu hình đóng gói bằng pyproject.toml và GitHub Actions.
 
-## 2. Cong nghe
+## 2. Công nghệ
 
-| Thanh phan | Cong nghe |
+| Thành phần | Công nghệ |
 |---|---|
-| Ngon ngu | Python 3.9 tro len |
+| Ngôn ngữ | Python 3.10 trở lên |
 | Package/build | setuptools, pyproject.toml |
-| Giao dien | Command Line Interface (CLI) |
-| Kiem thu | unittest (thu vien chuan Python) |
-| Quan ly ma nguon | Git va GitHub |
-| Tu dong kiem thu | GitHub Actions |
+| Giao diện | Command Line Interface (CLI) |
+| Kiểm thử | unittest (thư viện chuẩn Python) |
+| Quản lý mã nguồn | Git và GitHub |
+| Tự động kiểm thử | GitHub Actions |
 | IDE | Visual Studio Code |
 
-Khong can thu vien ben thu ba cho cac chuc nang bai tap. Sau khi cai package editable, co the import package tu thu muc src.
+Không cần thư viện bên thứ ba cho chức năng bài tập. Sau khi cài package editable, có thể import package từ thư mục src.
 
-## 3. Cau truc project
+## 3. Cấu trúc project
 
 ~~~text
 de-thi-python/
@@ -65,30 +65,31 @@ de-thi-python/
 │   └── test_cau5.py
 ├── .editorconfig
 ├── .gitignore
+├── LICENSE
 ├── pyproject.toml
 └── README.md
 ~~~
 
-### Vai tro cac thanh phan
+### Vai trò các thành phần
 
-| Thanh phan | Vai tro |
+| Thành phần | Vai trò |
 |---|---|
-| src/de_thi_python/ | Package chua ma nguon chinh |
-| cau1.py den cau5.py | Nam module giai nam cau |
-| __init__.py | Khoi tao package va khai bao phien ban |
-| __main__.py | Cho phep chay package bang python -m de_thi_python |
-| cli.py | Menu chon cau hoi |
-| tests/ | Unit test cho cac module |
-| HOTEN_MSSV/ | Nam file doc lap theo dinh dang nop bai |
-| pyproject.toml | Metadata, phien ban Python, cau hinh build va lenh CLI |
-| .github/workflows/ | Tu dong kiem thu khi push hoac tao pull request |
-| docs/ | Tai lieu cau truc va on tap |
+| src/de_thi_python/ | Package chứa mã nguồn chính |
+| cau1.py đến cau5.py | Năm module giải năm câu |
+| __init__.py | Khởi tạo package và khai báo phiên bản |
+| __main__.py | Cho phép chạy package bằng python -m de_thi_python |
+| cli.py | Menu chọn câu hỏi |
+| tests/ | Unit test cho các module |
+| HOTEN_MSSV/ | Năm file độc lập theo định dạng nộp bài |
+| pyproject.toml | Metadata, phiên bản Python, cấu hình build và lệnh CLI |
+| .github/workflows/ | Tự động kiểm thử khi push hoặc tạo pull request |
+| docs/ | Tài liệu cấu trúc và ôn tập |
 
-Xem them: [Tai lieu cau truc project](docs/PROJECT_STRUCTURE.md).
+Xem thêm: [Tài liệu cấu trúc project](docs/PROJECT_STRUCTURE.md) và [Tài liệu ôn tập](docs/ON_TAP.md).
 
-## 4. Cai dat project
+## 4. Cài đặt project
 
-### Buoc 1: Tai source
+### Bước 1: Tải source
 
 Clone repository:
 
@@ -97,9 +98,9 @@ git clone https://github.com/Noah-12111/de-thi-python.git
 cd de-thi-python
 ~~~
 
-Hoac tai [ZIP cua repository](https://github.com/Noah-12111/de-thi-python/archive/refs/heads/main.zip), giai nen va mo thu muc bang VS Code.
+Hoặc tải [ZIP của repository](https://github.com/Noah-12111/de-thi-python/archive/refs/heads/main.zip), giải nén và mở thư mục bằng VS Code.
 
-### Buoc 2: Tao moi truong ao (khuyen nghi)
+### Bước 2: Tạo môi trường ảo (khuyến nghị)
 
 Windows PowerShell:
 
@@ -115,33 +116,33 @@ python3 -m venv .venv
 source .venv/bin/activate
 ~~~
 
-### Buoc 3: Cai dat package
+### Bước 3: Cài đặt package
 
-Tai thu muc goc project, chay:
+Tại thư mục gốc project, chạy:
 
 ~~~bash
 python -m pip install -e .
 ~~~
 
-Tham so -e cai package o che do editable. Khi sua source trong src/de_thi_python, khong can cai dat lai sau moi lan thay doi.
+Tham số -e cài package ở chế độ editable. Khi sửa source trong src/de_thi_python, không cần cài đặt lại sau mỗi lần thay đổi.
 
-## 5. Cach chay chuong trinh
+## 5. Cách chạy chương trình
 
-### Cach 1 — Chay menu tong
+### Cách 1 — Chạy menu tổng
 
 ~~~bash
 python -m de_thi_python
 ~~~
 
-Sau khi cai dat, co the thu dung lenh:
+Sau khi cài đặt, có thể thử dùng lệnh:
 
 ~~~bash
 de-thi-python
 ~~~
 
-Menu cho phep chon cau 1 den cau 5 va quay lai menu sau khi chay.
+Menu cho phép chọn câu 1 đến câu 5 và quay lại menu sau khi chạy.
 
-### Cach 2 — Chay rieng tung module
+### Cách 2 — Chạy riêng từng module
 
 ~~~bash
 python -m de_thi_python.cau1
@@ -151,7 +152,7 @@ python -m de_thi_python.cau4
 python -m de_thi_python.cau5
 ~~~
 
-### Cach 3 — Chay file nop bai doc lap
+### Cách 3 — Chạy file nộp bài độc lập
 
 Windows PowerShell:
 
@@ -163,87 +164,87 @@ py .\HOTEN_MSSV\Cau4.py
 py .\HOTEN_MSSV\Cau5.py
 ~~~
 
-Cac file trong HOTEN_MSSV khong phu thuoc package src, vi vay co the chay doc lap.
+Các file trong HOTEN_MSSV không phụ thuộc package src, vì vậy có thể chạy độc lập.
 
-## 6. Noi dung nam module
+## 6. Nội dung năm module
 
-### Cau 1 — So nguyen va ham
+### Câu 1 — Số nguyên và hàm
 
 File: src/de_thi_python/cau1.py
 
-- Kiem tra n thuoc doan tu 1 den 1500.
-- dem_chu_so_le(n): dem chu so le.
-- tinh_s(n): tinh S = 1/2 + 1/4 + ... + 1/(2*n).
+- Kiểm tra n thuộc đoạn từ 1 đến 1500.
+- dem_chu_so_le(n): đếm chữ số lẻ.
+- tinh_s(n): tính S = 1/2 + 1/4 + ... + 1/(2*n).
 
-Vi du: n = 635 thi co 2 chu so le (3 va 5).
+Ví dụ: n = 635 thì có 2 chữ số lẻ (3 và 5).
 
-### Cau 2 — Xu ly chuoi
+### Câu 2 — Xử lý chuỗi
 
 File: src/de_thi_python/cau2.py
 
-- dem_chu_hoa(s): dem ky tu viet hoa bang isupper().
-- la_chuoi_doi_xung(s): so sanh chuoi voi s[::-1].
-- tinh_tong_chu_so(s): cong cac ky tu so trong chuoi.
+- dem_chu_hoa(s): đếm ký tự viết hoa bằng isupper().
+- la_chuoi_doi_xung(s): so sánh chuỗi với s[::-1].
+- tinh_tong_chu_so(s): cộng các ký tự số trong chuỗi.
 
-Vi du: AbcA21 co 2 ky tu viet hoa, khong doi xung va tong chu so bang 3.
+Ví dụ: AbcA21 có 2 ký tự viết hoa, không đối xứng và tổng chữ số bằng 3.
 
-### Cau 3 — Danh sach
+### Câu 3 — Danh sách
 
 File: src/de_thi_python/cau3.py
 
-- Nhap cac so nguyen den khi nguoi dung nhap 0.
-- tong_so_duong_chan(danh_sach): tinh tong so duong chan.
-- dem_so_lan_xuat_hien(danh_sach, k): dem so lan xuat hien cua k.
+- Nhập các số nguyên đến khi người dùng nhập 0.
+- tong_so_duong_chan(danh_sach): tính tổng số dương chẵn.
+- dem_so_lan_xuat_hien(danh_sach, k): đếm số lần xuất hiện của k.
 
-### Cau 4 — Tu dien quan ly sach
+### Câu 4 — Từ điển quản lý sách
 
 File: src/de_thi_python/cau4.py
 
-- Su dung dictionary voi ma sach lam key.
-- Thong tin sach duoc luu trong value.
-- them_sach(...): them sach va kiem tra ma trung.
-- xoa_sach(...): xoa sach theo ma va tra ve True/False.
-- hien_thi_sach(...): hien thi danh sach sach.
+- Sử dụng dictionary với mã sách làm key.
+- Thông tin sách được lưu trong value.
+- them_sach(...): thêm sách và kiểm tra mã trùng.
+- xoa_sach(...): xóa sách theo mã và trả về True/False.
+- hien_thi_sach(...): hiển thị danh sách sách.
 
-### Cau 5 — Lap trinh huong doi tuong
+### Câu 5 — Lập trình hướng đối tượng
 
 File: src/de_thi_python/cau5.py
 
-- Khai bao lop DienThoai.
-- Cac thuoc tinh: MaMay, TenMay, HangSanXuat, DungLuongPin, GiaBan.
-- __init__() khoi tao doi tuong.
-- thongtindienthoai() hien thi thong tin.
-- Tao hai doi tuong mau theo dung du lieu de thi.
+- Khai báo lớp DienThoai.
+- Các thuộc tính: MaMay, TenMay, HangSanXuat, DungLuongPin, GiaBan.
+- __init__() khởi tạo đối tượng.
+- thongtindienthoai() hiển thị thông tin.
+- Tạo hai đối tượng mẫu theo đúng dữ liệu đề thi.
 
-## 7. Chay kiem thu
+## 7. Chạy kiểm thử
 
-Project su dung unittest, da co san trong Python, khong can cai pytest.
+Project sử dụng unittest, đã có sẵn trong Python, không cần cài pytest.
 
 ~~~bash
 python -m unittest discover -s tests -v
 ~~~
 
-Cac test kiem tra:
-- Dem chu so le va tinh tong S.
-- Dem chu hoa, chuoi doi xung va tong chu so.
-- Tong so duong chan va dem phan tu.
-- Them/xoa sach va xu ly ma sach trung.
-- Tao doi tuong DienThoai va du lieu mau.
+Các test kiểm tra:
+- Đếm chữ số lẻ và tính tổng S.
+- Đếm chữ hoa, chuỗi đối xứng và tổng chữ số.
+- Tổng số dương chẵn và đếm phần tử.
+- Thêm/xóa sách và xử lý mã sách trùng.
+- Tạo đối tượng DienThoai và dữ liệu mẫu.
 
-GitHub Actions tu chay bo test khi co push len main hoac pull request.
+GitHub Actions tự chạy bộ test trên Python 3.10, 3.11, 3.12 và 3.13 khi có push lên main hoặc pull request.
 
-## 8. Dinh dang nop bai
+## 8. Định dạng nộp bài
 
-De thi yeu cau mot thu muc ten theo mau HOTEN_MSSV chua 5 file .py.
+Đề thi yêu cầu một thư mục tên theo mẫu HOTEN_MSSV chứa 5 file .py.
 
-Truoc khi nop:
-1. Doi ten thu muc HOTEN_MSSV thanh ho ten va ma so sinh vien cua ban.
-2. Kiem tra du Cau1.py den Cau5.py.
-3. Chay thu tung file doc lap.
-4. Chi nop thu muc 5 file theo yeu cau giang vien, tru khi giang vien yeu cau nop toan bo project.
+Trước khi nộp:
+1. Đổi tên thư mục HOTEN_MSSV thành họ tên và mã số sinh viên của bạn.
+2. Kiểm tra đủ Cau1.py đến Cau5.py.
+3. Chạy thử từng file độc lập.
+4. Chỉ nộp thư mục 5 file theo yêu cầu giảng viên, trừ khi giảng viên yêu cầu nộp toàn bộ project.
 
-## 9. Thong tin project
+## 9. Thông tin project
 
 - Repository: [Noah-12111/de-thi-python](https://github.com/Noah-12111/de-thi-python)
-- Phien ban: 1.0.0
+- Phiên bản: 1.0.0
 - License: MIT
