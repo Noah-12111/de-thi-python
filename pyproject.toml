@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "de-thi-python"
+version = "1.0.0"
+description = "Project hoc tap va giai de thi thuc hanh mon Lap trinh Python."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Noah-12111" }
+]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+de-thi-python = "de_thi_python.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
