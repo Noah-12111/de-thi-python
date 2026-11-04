@@ -81,7 +81,7 @@ def main() -> int:
         elif lua_chon == "3":
             autograder.main()
         else:
-            print("Lua chon khong hop le. Vui long chon 0, 1 hoac 2.")
+            print("Lua chon khong hop le. Vui long chon 0, 1, 2 hoac 3.")
 
 
 if __name__ == "__main__":
