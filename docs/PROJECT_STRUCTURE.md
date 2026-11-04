@@ -1,6 +1,6 @@
 # Cau truc project
 
-Project su dung mo hinh **src layout**. Cac bai tap duoc chia thanh module va package theo tung de thi; bo unit test duoc tach rieng trong hai thu muc De_1 va De_2.
+Project su dung mo hinh **src layout**. Bai tap duoc chia thanh module va package theo tung de thi; bo unit test duoc tach rieng trong hai thu muc De_1 va De_2.
 
 ## So do tong quat
 
@@ -11,6 +11,7 @@ de-thi-python/
 │   ├── ON_TAP.md
 │   └── PROJECT_STRUCTURE.md
 ├── HOTEN_MSSV/                  # 5 file nop bai cua De 1
+├── HOTEN_MSSV_DE_2/             # 5 file nop bai cua De 2
 ├── src/
 │   └── de_thi_python/
 │       ├── __init__.py
@@ -91,6 +92,8 @@ python -m unittest discover -s tests/De_2 -v
 | `.vscode/settings.json` | Thiet lap co ban cho VS Code |
 | `.github/workflows/` | Chay unit test tu dong tren GitHub Actions |
 | `docs/` | Tai lieu cau truc va noi dung on tap |
+| `HOTEN_MSSV/` | File nop bai De 1 |
+| `HOTEN_MSSV_DE_2/` | File nop bai De 2 |
 
 ## 4. Luong chay
 
