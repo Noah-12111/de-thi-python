@@ -16,6 +16,7 @@ dependencies = []
 
 [project.scripts]
 de-thi-python = "de_thi_python.cli:main"
+cham-diem-python = "de_thi_python.autograder:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
