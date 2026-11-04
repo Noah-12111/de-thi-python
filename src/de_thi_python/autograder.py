@@ -32,9 +32,9 @@ EXAMS: dict[str, dict[str, Any]] = {
                         "pattern": r"(so luong chu so le|dem chu so le)[^\n]{0,50}\b3\b",
                     },
                     {
-                        "name": "Tinh S voi n = 3, ket qua xap xi 0.9167",
+                        "name": "Tinh S voi n = 135, ket qua xap xi 2.7431",
                         "points": 1.0,
-                        "pattern": r"\bs\s*=\s*0[.,]9(?:16|2)",
+                        "pattern": r"\bs\s*=\s*2[.,]74",
                     },
                 ],
             },
@@ -150,7 +150,7 @@ EXAMS: dict[str, dict[str, Any]] = {
             },
             {
                 "number": 3,
-                "stdin": "2\n4\n-2\n3\n4\n0\n6\n4\n",
+                "stdin": "2\n4\n-2\n3\n4\n6\n0\n4\n",
                 "checks": [
                     {
                         "name": "Loc dung danh sach so duong chan [2, 4, 4, 6]",
