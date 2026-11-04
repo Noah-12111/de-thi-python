@@ -22,7 +22,7 @@ class TestAutoGrader(unittest.TestCase):
     def test_cham_duoc_de_1_mau(self):
         project_root = Path(__file__).resolve().parents[1]
         report = grade_exam("1", project_root / "HOTEN_MSSV")
-        self.assertEqual(report["score"], 10.0)
+        self.assertEqual(report["score"], 10.0, msg=repr([(item["question"], item["score"], [check["name"] for check in item["checks"] if not check["passed"]]) for item in report["questions"]]))
 
     def test_cham_duoc_de_2_mau(self):
         project_root = Path(__file__).resolve().parents[1]
