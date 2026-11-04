@@ -18,8 +18,8 @@ class TestAutoGrader(unittest.TestCase):
             "section_after": "Danh sach sau khi xu ly",
             "should_match": False,
         }
-        self.assertTrue(_check_output("S001 da xoa\\nDanh sach sau khi xu ly\\n{}", check))
-        self.assertFalse(_check_output("S001 da xoa\\nDanh sach sau khi xu ly\\n{'S001': []}", check))
+        self.assertTrue(_check_output("S001 da xoa\nDanh sach sau khi xu ly\n{}", check))
+        self.assertFalse(_check_output("S001 da xoa\nDanh sach sau khi xu ly\n{'S001': []}", check))
 
     def test_cham_duoc_de_1_mau(self):
         project_root = Path(__file__).resolve().parents[1]
