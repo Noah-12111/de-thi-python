@@ -1,6 +1,6 @@
 """Giao dien dong lenh chon de thi va cau hoi."""
 
-from . import cau1, cau2, cau3, cau4, cau5
+from . import autograder, cau1, cau2, cau3, cau4, cau5
 from .de_2 import (
     cau1 as de2_cau1,
     cau2 as de2_cau2,
@@ -65,6 +65,7 @@ def main() -> int:
         print("=" * 52)
         print("1. De 1 - De thi ca 7g30")
         print("2. De 2 - De thi ca 9g45")
+        print("3. Auto cham diem bai nop")
         print("0. Thoat chuong trinh")
         print("=" * 52)
 
@@ -77,6 +78,8 @@ def main() -> int:
             chay_menu_cau_hoi("DE 1", DE_1)
         elif lua_chon == "2":
             chay_menu_cau_hoi("DE 2", DE_2)
+        elif lua_chon == "3":
+            autograder.main()
         else:
             print("Lua chon khong hop le. Vui long chon 0, 1 hoac 2.")
 
