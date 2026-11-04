@@ -5,7 +5,7 @@ from de_thi_python.de_2.cau2 import dem_chu_thuong, la_chuoi_doi_xung, viet_hoa_
 
 class TestDe2Cau2(unittest.TestCase):
     def test_dem_chu_thuong(self):
-        self.assertEqual(dem_chu_thuong("Abc DE 12"), 3)
+        self.assertEqual(dem_chu_thuong("Abc DE 12"), 2)
         self.assertEqual(dem_chu_thuong("ABC123"), 0)
 
     def test_doi_xung(self):
