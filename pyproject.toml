@@ -7,7 +7,7 @@ name = "de-thi-python"
 version = "1.0.0"
 description = "Project hoc tap va giai de thi thuc hanh mon Lap trinh Python."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [
     { name = "Noah-12111" }
 ]
