@@ -217,7 +217,7 @@ def _check_output(output: str, check: dict[str, Any]) -> bool:
             return False
         target = target.split(marker_normalized, 1)[1]
 
-    found = re.search(_normalize(check["pattern"]), target, flags=re.IGNORECASE) is not None
+    found = re.search(check["pattern"], target, flags=re.IGNORECASE) is not None
     return found if check.get("should_match", True) else not found
 
 
