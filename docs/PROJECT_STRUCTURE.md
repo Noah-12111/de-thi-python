@@ -1,87 +1,109 @@
 # Cau truc project
 
-Project duoc to chuc theo mo hinh **src layout**. Ma nguon package nam trong `src/de_thi_python/`, tach rieng tung bai thanh module.
+Project su dung mo hinh **src layout**. Cac bai tap duoc chia thanh module va package theo tung de thi; bo unit test duoc tach rieng trong hai thu muc De_1 va De_2.
 
-## So do
+## So do tong quat
 
-```text
+~~~text
 de-thi-python/
-├── .github/
-│   └── workflows/
-│       └── python-tests.yml
-├── .vscode/
-│   └── settings.json
+├── .github/workflows/python-tests.yml
 ├── docs/
+│   ├── ON_TAP.md
 │   └── PROJECT_STRUCTURE.md
-├── HOTEN_MSSV/
-│   ├── Cau1.py
-│   ├── Cau2.py
-│   ├── Cau3.py
-│   ├── Cau4.py
-│   └── Cau5.py
+├── HOTEN_MSSV/                  # 5 file nop bai cua De 1
 ├── src/
 │   └── de_thi_python/
 │       ├── __init__.py
 │       ├── __main__.py
-│       ├── cli.py
-│       ├── cau1.py
-│       ├── cau2.py
-│       ├── cau3.py
-│       ├── cau4.py
-│       └── cau5.py
+│       ├── cli.py               # Menu chon de va cau hoi
+│       ├── cau1.py              # De 1 - Cau 1
+│       ├── cau2.py              # De 1 - Cau 2
+│       ├── cau3.py              # De 1 - Cau 3
+│       ├── cau4.py              # De 1 - Cau 4
+│       ├── cau5.py              # De 1 - Cau 5
+│       └── de_2/
+│           ├── __init__.py
+│           ├── cau1.py
+│           ├── cau2.py
+│           ├── cau3.py
+│           ├── cau4.py
+│           └── cau5.py
 ├── tests/
 │   ├── __init__.py
-│   ├── test_cau1.py
-│   ├── test_cau2.py
-│   ├── test_cau3.py
-│   ├── test_cau4.py
-│   └── test_cau5.py
+│   ├── De_1/
+│   │   ├── __init__.py
+│   │   ├── test_cau1.py
+│   │   ├── test_cau2.py
+│   │   ├── test_cau3.py
+│   │   ├── test_cau4.py
+│   │   └── test_cau5.py
+│   └── De_2/
+│       ├── __init__.py
+│       ├── test_cau1.py
+│       ├── test_cau2.py
+│       ├── test_cau3.py
+│       ├── test_cau4.py
+│       └── test_cau5.py
 ├── .editorconfig
 ├── .gitignore
+├── LICENSE
 ├── pyproject.toml
 └── README.md
-```
+~~~
 
-## Vai tro tung thanh phan
+## 1. Module va package
+
+- **Module** la mot file Python, vi du `cau1.py`.
+- **Package** la thu muc gom nhieu module va co file `__init__.py`.
+- Package goc `de_thi_python` chua loi giai De 1.
+- Package con `de_thi_python.de_2` chua loi giai De 2.
+- `cli.py` la giao dien dong lenh de chon de thi va chay tung cau.
+
+## 2. Bo kiem thu
+
+Thu muc `tests` duoc chia theo de thi:
+
+| Thu muc | Noi dung |
+|---|---|
+| `tests/De_1/` | Unit test cho 5 cau cua De 1 |
+| `tests/De_2/` | Unit test cho 5 cau cua De 2 |
+
+Moi file `test_cauN.py` kiem tra cac ham hoac lop tuong ung trong package source. Hai bo test duoc chay chung bang lenh:
+
+~~~bash
+python -m unittest discover -s tests -v
+~~~
+
+Co the chay rieng tung de:
+
+~~~bash
+python -m unittest discover -s tests/De_1 -v
+python -m unittest discover -s tests/De_2 -v
+~~~
+
+## 3. Thanh phan cau hinh
 
 | Thanh phan | Chuc nang |
 |---|---|
-| `src/de_thi_python/` | Python package chinh cua du an |
-| `cau1.py` den `cau5.py` | Moi file la mot module giai mot cau |
-| `__init__.py` | Danh dau thu muc la package va khai bao phien ban |
-| `__main__.py` | Cho phep chay package bang `python -m de_thi_python` |
-| `cli.py` | Menu dong lenh de chon bai |
-| `tests/` | Cac unit test kiem tra ham va lop |
-| `HOTEN_MSSV/` | 5 file Python doc lap de nop bai theo de |
-| `pyproject.toml` | Khai bao metadata, Python version, package va lenh CLI |
-| `.github/workflows/` | Tu dong chay kiem thu khi push/pull request |
-| `docs/` | Tai lieu cau truc va huong dan |
-| `.gitignore` | Bo qua file tam, cache, moi truong ao |
+| `pyproject.toml` | Metadata, dependency va cau hinh build package |
+| `.gitignore` | Bo qua cache, moi truong ao va file build |
 | `.editorconfig` | Thong nhat dinh dang ma nguon |
+| `.vscode/settings.json` | Thiet lap co ban cho VS Code |
+| `.github/workflows/` | Chay unit test tu dong tren GitHub Actions |
+| `docs/` | Tai lieu cau truc va noi dung on tap |
 
-## Quan he giua module va package
+## 4. Luong chay
 
-- **Module** la mot file Python, vi du `cau1.py`.
-- **Package** la mot thu muc gom cac module Python va co file `__init__.py`, vi du `de_thi_python`.
-- **CLI** la giao dien dong lenh, duoc module `cli.py` quan ly.
-- **Unit test** la cac bai kiem tra nho de dam bao ham tra ve ket qua dung.
-
-## Luong chay
-
-```text
+~~~text
 Nguoi dung
     |
     v
 __main__.py
     |
     v
-cli.py (menu)
+cli.py
     |
-    +--> cau1.py
-    +--> cau2.py
-    +--> cau3.py
-    +--> cau4.py
-    +--> cau5.py
-```
-
-Cac module bai tap co the duoc import va tai su dung trong module khac hoac trong unit test.
+    +---- Chon De 1 ----> Module cau1.py ... cau5.py
+    |
+    +---- Chon De 2 ----> Package de_2/cau1.py ... cau5.py
+~~~
