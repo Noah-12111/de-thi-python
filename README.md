@@ -1,143 +1,249 @@
-# Bộ lời giải đề thi kết thúc môn Lập trình Python
+# De thi Python — Project on tap va thuc hanh
 
-Repository lưu lời giải cho **mã đề 11301** của môn **Lập trình Python (mã môn 229152)**, theo đề và đáp án mẫu trong PDF được cung cấp.
+[![Python tests](https://github.com/Noah-12111/de-thi-python/actions/workflows/python-tests.yml/badge.svg)](https://github.com/Noah-12111/de-thi-python/actions/workflows/python-tests.yml)
 
-Mục tiêu của bộ bài làm là bám sát yêu cầu đề thi, sử dụng cú pháp Python cơ bản, đặt tên biến dễ hiểu và có chú thích để thuận tiện ôn tập.
+Project giai de thi ket thuc mon **Lap trinh Python (ma mon 229152, ma de 11301)**. Source duoc to chuc thanh Python package co module, CLI, kiem thu tu dong va tai lieu. Repository dong thoi giu 5 file Python doc lap theo cau truc nop bai cua de thi.
 
-## 1. Cấu trúc thư mục
+## 1. Muc tieu
 
-```text
+- Giai day du 5 cau theo de va dap an mau duoc cung cap.
+- Dung cu phap Python co ban, ten ham de hieu va chu thich ro rang.
+- Tach moi cau thanh mot module de import va tai su dung.
+- Gom cac module vao mot package.
+- Co menu CLI de chay chuong trinh.
+- Co unit test de kiem tra ham va lop.
+- Co cau hinh dong goi bang pyproject.toml va GitHub Actions.
+
+## 2. Cong nghe
+
+| Thanh phan | Cong nghe |
+|---|---|
+| Ngon ngu | Python 3.9 tro len |
+| Package/build | setuptools, pyproject.toml |
+| Giao dien | Command Line Interface (CLI) |
+| Kiem thu | unittest (thu vien chuan Python) |
+| Quan ly ma nguon | Git va GitHub |
+| Tu dong kiem thu | GitHub Actions |
+| IDE | Visual Studio Code |
+
+Khong can thu vien ben thu ba cho cac chuc nang bai tap. Sau khi cai package editable, co the import package tu thu muc src.
+
+## 3. Cau truc project
+
+~~~text
 de-thi-python/
-├── README.md
-└── HOTEN_MSSV/
-    ├── Cau1.py
-    ├── Cau2.py
-    ├── Cau3.py
-    ├── Cau4.py
-    └── Cau5.py
-```
+├── .github/
+│   └── workflows/
+│       └── python-tests.yml
+├── .vscode/
+│   └── settings.json
+├── docs/
+│   ├── ON_TAP.md
+│   └── PROJECT_STRUCTURE.md
+├── HOTEN_MSSV/
+│   ├── Cau1.py
+│   ├── Cau2.py
+│   ├── Cau3.py
+│   ├── Cau4.py
+│   └── Cau5.py
+├── src/
+│   └── de_thi_python/
+│       ├── __init__.py
+│       ├── __main__.py
+│       ├── cli.py
+│       ├── cau1.py
+│       ├── cau2.py
+│       ├── cau3.py
+│       ├── cau4.py
+│       └── cau5.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_cau1.py
+│   ├── test_cau2.py
+│   ├── test_cau3.py
+│   ├── test_cau4.py
+│   └── test_cau5.py
+├── .editorconfig
+├── .gitignore
+├── pyproject.toml
+└── README.md
+~~~
 
-**Lưu ý khi nộp bài:** đề yêu cầu một thư mục theo mẫu `HOTEN_MSSV` chứa đúng 5 file `.py`. Trước khi nộp, hãy đổi tên thư mục này theo họ tên và mã số sinh viên của bạn theo đúng quy định của giảng viên. Không cần đổi tên 5 file bài làm.
+### Vai tro cac thanh phan
 
-## 2. Yêu cầu chạy chương trình
+| Thanh phan | Vai tro |
+|---|---|
+| src/de_thi_python/ | Package chua ma nguon chinh |
+| cau1.py den cau5.py | Nam module giai nam cau |
+| __init__.py | Khoi tao package va khai bao phien ban |
+| __main__.py | Cho phep chay package bang python -m de_thi_python |
+| cli.py | Menu chon cau hoi |
+| tests/ | Unit test cho cac module |
+| HOTEN_MSSV/ | Nam file doc lap theo dinh dang nop bai |
+| pyproject.toml | Metadata, phien ban Python, cau hinh build va lenh CLI |
+| .github/workflows/ | Tu dong kiem thu khi push hoac tao pull request |
+| docs/ | Tai lieu cau truc va on tap |
 
-- Python 3.8 trở lên.
-- Không cần cài thư viện ngoài bằng `pip`.
-- Có thể chạy bằng VS Code, PyCharm hoặc Terminal.
+Xem them: [Tai lieu cau truc project](docs/PROJECT_STRUCTURE.md).
 
-Ví dụ chạy câu 1:
+## 4. Cai dat project
 
-```bash
-python HOTEN_MSSV/Cau1.py
-```
+### Buoc 1: Tai source
 
-Trên Windows cũng có thể dùng lệnh:
+Clone repository:
 
-```powershell
+~~~bash
+git clone https://github.com/Noah-12111/de-thi-python.git
+cd de-thi-python
+~~~
+
+Hoac tai [ZIP cua repository](https://github.com/Noah-12111/de-thi-python/archive/refs/heads/main.zip), giai nen va mo thu muc bang VS Code.
+
+### Buoc 2: Tao moi truong ao (khuyen nghi)
+
+Windows PowerShell:
+
+~~~powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+~~~
+
+Linux/macOS:
+
+~~~bash
+python3 -m venv .venv
+source .venv/bin/activate
+~~~
+
+### Buoc 3: Cai dat package
+
+Tai thu muc goc project, chay:
+
+~~~bash
+python -m pip install -e .
+~~~
+
+Tham so -e cai package o che do editable. Khi sua source trong src/de_thi_python, khong can cai dat lai sau moi lan thay doi.
+
+## 5. Cach chay chuong trinh
+
+### Cach 1 — Chay menu tong
+
+~~~bash
+python -m de_thi_python
+~~~
+
+Sau khi cai dat, co the thu dung lenh:
+
+~~~bash
+de-thi-python
+~~~
+
+Menu cho phep chon cau 1 den cau 5 va quay lai menu sau khi chay.
+
+### Cach 2 — Chay rieng tung module
+
+~~~bash
+python -m de_thi_python.cau1
+python -m de_thi_python.cau2
+python -m de_thi_python.cau3
+python -m de_thi_python.cau4
+python -m de_thi_python.cau5
+~~~
+
+### Cach 3 — Chay file nop bai doc lap
+
+Windows PowerShell:
+
+~~~powershell
 py .\HOTEN_MSSV\Cau1.py
-```
+py .\HOTEN_MSSV\Cau2.py
+py .\HOTEN_MSSV\Cau3.py
+py .\HOTEN_MSSV\Cau4.py
+py .\HOTEN_MSSV\Cau5.py
+~~~
 
-Thay `Cau1.py` bằng `Cau2.py`, `Cau3.py`, `Cau4.py` hoặc `Cau5.py` để chạy câu tương ứng. Mỗi file là một chương trình độc lập.
+Cac file trong HOTEN_MSSV khong phu thuoc package src, vi vay co the chay doc lap.
 
-## 3. Nội dung từng câu
+## 6. Noi dung nam module
 
-### Câu 1 - Số nguyên và hàm
+### Cau 1 — So nguyen va ham
 
-File: `HOTEN_MSSV/Cau1.py`
+File: src/de_thi_python/cau1.py
 
-1. Nhập số nguyên dương `n`; nếu `n` nằm ngoài đoạn từ 1 đến 1500 thì yêu cầu nhập lại.
-2. Hàm `DemChuSoLe(n)` dùng phép chia lấy dư `%` để tách từng chữ số, sau đó đếm chữ số lẻ.
-3. Hàm `S(n)` tính tổng:
+- Kiem tra n thuoc doan tu 1 den 1500.
+- dem_chu_so_le(n): dem chu so le.
+- tinh_s(n): tinh S = 1/2 + 1/4 + ... + 1/(2*n).
 
-   `S = 1/2 + 1/4 + 1/6 + ... + 1/(2*n)`
+Vi du: n = 635 thi co 2 chu so le (3 va 5).
 
-**Ví dụ:** nhập `n = 635`, chương trình đếm được 2 chữ số lẻ (3 và 5).
+### Cau 2 — Xu ly chuoi
 
-**Kiến thức cần nhớ:** `while`, `for`, phép chia lấy dư `%`, phép chia nguyên `//`, hàm và giá trị trả về `return`.
+File: src/de_thi_python/cau2.py
 
-### Câu 2 - Xử lý chuỗi
+- dem_chu_hoa(s): dem ky tu viet hoa bang isupper().
+- la_chuoi_doi_xung(s): so sanh chuoi voi s[::-1].
+- tinh_tong_chu_so(s): cong cac ky tu so trong chuoi.
 
-File: `HOTEN_MSSV/Cau2.py`
+Vi du: AbcA21 co 2 ky tu viet hoa, khong doi xung va tong chu so bang 3.
 
-1. Hàm `DemChuHoa(s)` duyệt chuỗi và dùng `isupper()` để đếm ký tự viết hoa.
-2. Hàm `DoiXung(s)` so sánh chuỗi ban đầu với chuỗi đảo ngược `s[::-1]`.
-3. Hàm `TongChuSo(s)` dùng `isdigit()` để nhận diện chữ số và cộng các chữ số đó.
+### Cau 3 — Danh sach
 
-**Ví dụ:** nhập `AbcA21` thì có 2 ký tự viết hoa, chuỗi không đối xứng và tổng chữ số bằng 3.
+File: src/de_thi_python/cau3.py
 
-**Lưu ý:** kiểm tra đối xứng được thực hiện đúng theo cách so sánh toàn bộ chuỗi trong đáp án mẫu; chữ hoa/chữ thường, khoảng trắng và ký tự đặc biệt đều được giữ nguyên khi so sánh.
+- Nhap cac so nguyen den khi nguoi dung nhap 0.
+- tong_so_duong_chan(danh_sach): tinh tong so duong chan.
+- dem_so_lan_xuat_hien(danh_sach, k): dem so lan xuat hien cua k.
 
-**Kiến thức cần nhớ:** duyệt chuỗi bằng `for`, `isupper()`, `isdigit()`, ép kiểu `int()` và cắt chuỗi đảo ngược `[::-1]`.
+### Cau 4 — Tu dien quan ly sach
 
-### Câu 3 - Danh sách
+File: src/de_thi_python/cau4.py
 
-File: `HOTEN_MSSV/Cau3.py`
+- Su dung dictionary voi ma sach lam key.
+- Thong tin sach duoc luu trong value.
+- them_sach(...): them sach va kiem tra ma trung.
+- xoa_sach(...): xoa sach theo ma va tra ve True/False.
+- hien_thi_sach(...): hien thi danh sach sach.
 
-1. Tạo danh sách rỗng `danh_sach = []`.
-2. Nhập số nguyên liên tục; nhập `0` để kết thúc. Số 0 chỉ là ký hiệu dừng, không được thêm vào danh sách.
-3. Duyệt danh sách để tính tổng các số dương chẵn.
-4. Nhập `k` và đếm số lần `k` xuất hiện trong danh sách.
+### Cau 5 — Lap trinh huong doi tuong
 
-Chương trình có xử lý trường hợp người dùng nhập dữ liệu không phải số nguyên ở bước nhập danh sách.
+File: src/de_thi_python/cau5.py
 
-**Kiến thức cần nhớ:** list, `append()`, vòng lặp `while`, `break`, điều kiện kết hợp `and` và biến đếm.
+- Khai bao lop DienThoai.
+- Cac thuoc tinh: MaMay, TenMay, HangSanXuat, DungLuongPin, GiaBan.
+- __init__() khoi tao doi tuong.
+- thongtindienthoai() hien thi thong tin.
+- Tao hai doi tuong mau theo dung du lieu de thi.
 
-### Câu 4 - Từ điển quản lý sách
+## 7. Chay kiem thu
 
-File: `HOTEN_MSSV/Cau4.py`
+Project su dung unittest, da co san trong Python, khong can cai pytest.
 
-1. Nhập số lượng sách `n > 0`.
-2. Với mỗi sách, nhập mã số, tên sách, tên tác giả, nhà xuất bản và năm xuất bản.
-3. Lưu thông tin trong từ điển `tu_dien`, trong đó mã số sách là **key**; giá trị là danh sách gồm tên sách, tác giả, nhà xuất bản và năm xuất bản.
-4. Không chấp nhận năm xuất bản lớn hơn năm hiện tại.
-5. Nhập mã số cần xóa. Nếu mã tồn tại thì dùng `del` để xóa; nếu không thì thông báo không tìm thấy.
+~~~bash
+python -m unittest discover -s tests -v
+~~~
 
-**Ví dụ cấu trúc dữ liệu:**
+Cac test kiem tra:
+- Dem chu so le va tinh tong S.
+- Dem chu hoa, chuoi doi xung va tong chu so.
+- Tong so duong chan va dem phan tu.
+- Them/xoa sach va xu ly ma sach trung.
+- Tao doi tuong DienThoai va du lieu mau.
 
-```python
-{
-    "S001": ["Python Co Ban", "Nguyen Van A", "NXB Tre", 2020]
-}
-```
+GitHub Actions tu chay bo test khi co push len main hoac pull request.
 
-**Kiến thức cần nhớ:** dictionary, key/value, `datetime.now().year`, toán tử `in`, `del` và danh sách dùng làm giá trị.
+## 8. Dinh dang nop bai
 
-### Câu 5 - Lập trình hướng đối tượng
+De thi yeu cau mot thu muc ten theo mau HOTEN_MSSV chua 5 file .py.
 
-File: `HOTEN_MSSV/Cau5.py`
+Truoc khi nop:
+1. Doi ten thu muc HOTEN_MSSV thanh ho ten va ma so sinh vien cua ban.
+2. Kiem tra du Cau1.py den Cau5.py.
+3. Chay thu tung file doc lap.
+4. Chi nop thu muc 5 file theo yeu cau giang vien, tru khi giang vien yeu cau nop toan bo project.
 
-Tạo lớp `DienThoai` với 5 thuộc tính:
+## 9. Thong tin project
 
-- `MaMay`
-- `TenMay`
-- `HangSanXuat`
-- `DungLuongPin`
-- `GiaBan`
-
-Lớp có phương thức khởi tạo `__init__()` để gán dữ liệu cho thuộc tính và phương thức `thongtindienthoai()` để hiển thị thông tin.
-
-Chương trình tạo đúng hai đối tượng theo đề:
-
-| Mã máy | Tên máy | Hãng | Dung lượng pin | Giá bán |
-|---|---|---|---:|---:|
-| DT01 | iPhone 15 Pro | Apple | 3274 | 28.990.000 |
-| DT02 | Galaxy S24 Ultra | Samsung | 5000 | 29.990.000 |
-
-**Kiến thức cần nhớ:** class, object, `self`, `__init__()`, thuộc tính và phương thức.
-
-## 4. Cách ôn tập nhanh
-
-| Câu | Nội dung trọng tâm | Từ khóa nên nhớ |
-|---|---|---|
-| 1 | Xử lý chữ số và tính tổng | `%`, `//`, `while`, `for`, `return` |
-| 2 | Xử lý chuỗi | `isupper()`, `isdigit()`, `[::-1]` |
-| 3 | Danh sách | `[]`, `append()`, `break`, `for` |
-| 4 | Từ điển | `{}`, key, value, `in`, `del` |
-| 5 | Lớp và đối tượng | `class`, `self`, `__init__()` |
-
-## 5. Ghi chú
-
-- Các lời giải được tách thành 5 file độc lập theo cấu trúc bài thi.
-- Tên hàm, lớp và các trường dữ liệu được giữ gần với đề/đáp án để dễ đối chiếu.
-- Kết quả tính tổng ở câu 1 là số thực Python; có thể xuất hiện nhiều chữ số sau dấu thập phân do cách biểu diễn số thực.
-- Đây là bài làm thực hành cơ bản, ưu tiên cách viết rõ ràng và dễ học thuộc; không sử dụng framework hay thư viện bên ngoài.
+- Repository: [Noah-12111/de-thi-python](https://github.com/Noah-12111/de-thi-python)
+- Phien ban: 1.0.0
+- License: MIT
