@@ -15,6 +15,7 @@ dist/
 .eggs/
 
 # Test and coverage
+/reports/
 .pytest_cache/
 .coverage
 htmlcov/
