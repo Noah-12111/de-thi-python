@@ -17,6 +17,7 @@ de-thi-python/
 │       ├── __init__.py
 │       ├── __main__.py
 │       ├── cli.py               # Menu chon de va cau hoi
+│       ├── autograder.py        # Cham diem bai nop tu dong
 │       ├── cau1.py              # De 1 - Cau 1
 │       ├── cau2.py              # De 1 - Cau 2
 │       ├── cau3.py              # De 1 - Cau 3
@@ -31,6 +32,7 @@ de-thi-python/
 │           └── cau5.py
 ├── tests/
 │   ├── __init__.py
+│   ├── test_autograder.py
 │   ├── De_1/
 │   │   ├── __init__.py
 │   │   ├── test_cau1.py
@@ -59,6 +61,7 @@ de-thi-python/
 - Package goc `de_thi_python` chua loi giai De 1.
 - Package con `de_thi_python.de_2` chua loi giai De 2.
 - `cli.py` la giao dien dong lenh de chon de thi va chay tung cau.
+- `autograder.py` chay bo test dau vao/dau ra tren 5 file bai nop va tinh diem tren thang 10.
 
 ## 2. Bo kiem thu
 
@@ -68,6 +71,7 @@ Thu muc `tests` duoc chia theo de thi:
 |---|---|
 | `tests/De_1/` | Unit test cho 5 cau cua De 1 |
 | `tests/De_2/` | Unit test cho 5 cau cua De 2 |
+| `tests/test_autograder.py` | Kiem thu bo cham diem tu dong va bai nop mau |
 
 Moi file `test_cauN.py` kiem tra cac ham hoac lop tuong ung trong package source. Hai bo test duoc chay chung bang lenh:
 
@@ -109,4 +113,6 @@ cli.py
     +---- Chon De 1 ----> Module cau1.py ... cau5.py
     |
     +---- Chon De 2 ----> Package de_2/cau1.py ... cau5.py
+    |
+    +---- Auto cham diem ----> autograder.py ----> Bao cao reports/*.json
 ~~~
